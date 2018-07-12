@@ -18,6 +18,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
+/**
+ * This class contains helper methods that start up the Chrome Driver that is located in the resources.
+ */
 public class BrowserHelper {
     private Config config;
     private final Driver driver;

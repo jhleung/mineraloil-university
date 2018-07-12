@@ -16,6 +16,4 @@ public class ExampleTest extends BaseUITest {
         Assertions.assertThat(example.getInputText()).isEqualTo("Hello World");
     }
 
-
-
 }

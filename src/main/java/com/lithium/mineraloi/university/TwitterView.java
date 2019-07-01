@@ -6,18 +6,26 @@ import com.lithium.mineraloil.selenium.elements.Driver;
 import com.lithium.mineraloil.selenium.elements.TextElement;
 import org.openqa.selenium.By;
 
-public class ExampleView {
+public class TwitterView {
     private Driver driver;
 
-    public ExampleView() {
+    public TwitterView() {
         driver = DriverManager.INSTANCE.getDriver();
     }
 
-    public BaseElement getSomeElement() {
+    public BaseElement getFilterHomeTimelineButton() {
         return driver.createBaseElement(By.xpath("//button[@class='filterHomeTimelineButton']"));
     }
 
-    public TextElement getTextElement() {
+    public TextElement getFilterTextElement() {
         return driver.createTextElement(By.xpath("//input[@class='filter-keyword']"));
+    }
+
+    public BaseElement getTweetStyleOneElement() {
+        return driver.createBaseElement(By.xpath("//div[@class='tweet-style-one]']"));
+    }
+
+    public BaseElement getErrorElement() {
+        return driver.createBaseElement(By.xpath("//div[@class='error']"));
     }
 }

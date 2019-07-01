@@ -56,7 +56,7 @@ public class BrowserHelper {
     }
 
     private DesiredCapabilities getDesiredCapabilities() {
-        Map<String, Object> prefs = new HashMap<>();
+        Map<String, Object> prefs = new HashMap();
         DesiredCapabilities profile = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
         LoggingPreferences loggingPrefs = new LoggingPreferences();

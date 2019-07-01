@@ -14,10 +14,10 @@ public class ExampleView {
     }
 
     public BaseElement getSomeElement() {
-        return driver.createBaseElement(By.xpath("//button[@class='filterHomeTimelineButton']"));
+        return driver.createBaseElement(By.xpath("//div[@class='someClass']"));
     }
 
     public TextElement getTextElement() {
-        return driver.createTextElement(By.xpath("//input[@class='filter-keyword']"));
+        return driver.createTextElement(By.xpath("//input[@class='textInput']"));
     }
 }

@@ -8,12 +8,25 @@ import org.junit.jupiter.api.Test;
 
 public class TwitterTest extends BaseUITest {
 
-    @DisplayName("When something is inputted, then the this should pop up")
+    @DisplayName("When filter timeline is successful, then tweet should render")
     @Test
-    void exampleTest() {
+    void filterTimelineResultsFoundTest() {
         TwitterController example = new TwitterController();
-        example.filterHomeTimeline();
-        Assertions.assertThat(example.getInputText()).isEqualTo("test");
-        Assertions.assertThat(example.tweetExists() || example.errorExists()).isTrue();
+        final String keyword = "a";
+        example.filterHomeTimeline(keyword);
+        Assertions.assertThat(example.getInputText()).isEqualTo(keyword);
+        Assertions.assertThat(example.tweetIsDisplayed()).isTrue();
+        Assertions.assertThat(example.errorIsDisplayed()).isFalse();
+    }
+
+    @DisplayName("When filter timeline is unsuccessful, then tweet should render")
+    @Test
+    void filterTimelineNoResultsTest() {
+        TwitterController example = new TwitterController();
+        final String keyword = "NO_RESULTS_RETURNED_KEYWORD";
+        example.filterHomeTimeline(keyword);
+        Assertions.assertThat(example.getInputText()).isEqualTo(keyword);
+        Assertions.assertThat(example.tweetIsDisplayed()).isFalse();
+        Assertions.assertThat(example.errorIsDisplayed()).isTrue();
     }
 }

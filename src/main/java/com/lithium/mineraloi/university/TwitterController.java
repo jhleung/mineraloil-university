@@ -7,8 +7,8 @@ public class TwitterController {
         view = new TwitterView();
     }
 
-    public void filterHomeTimeline() {
-        view.getFilterTextElement().type("test");
+    public void filterHomeTimeline(String keyword) {
+        view.getFilterTextElement().type(keyword);
         view.getFilterHomeTimelineButton().click();
     }
 
@@ -16,11 +16,11 @@ public class TwitterController {
         return view.getFilterTextElement().getAttribute("value");
     }
 
-    public Boolean tweetExists() {
-        return view.getTweetStyleOneElement() != null;
+    public Boolean tweetIsDisplayed() {
+        return view.getTweetStyleOneElement().isDisplayed();
     }
 
-    public Boolean errorExists() {
-        return view.getErrorElement() != null;
+    public Boolean errorIsDisplayed() {
+        return view.getErrorElement().isDisplayed();
     }
 }

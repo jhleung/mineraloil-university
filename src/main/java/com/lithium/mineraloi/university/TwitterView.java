@@ -22,7 +22,9 @@ public class TwitterView {
     }
 
     public BaseElement getTweetStyleOneElement() {
-        return driver.createBaseElement(By.xpath("//div[@class='tweet-style-one]']"));
+        return driver.createBaseElement(By.xpath("//div[@class='homeTimeline']"))
+                .createBaseElement(By.xpath("//div[@id='timeline-inner']"))
+                .createBaseElement(By.xpath("//div[@class='tweet-style-one']"));
     }
 
     public BaseElement getErrorElement() {

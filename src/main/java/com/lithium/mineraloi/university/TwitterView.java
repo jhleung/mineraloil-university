@@ -17,14 +17,28 @@ public class TwitterView {
         return driver.createBaseElement(By.xpath("//button[@class='filterHomeTimelineButton']"));
     }
 
+    public BaseElement getUserTimelineTab() {
+        return driver.createBaseElement(By.xpath("//a[starts-with(@class, 'tab-1')]"));
+    }
+
+    public BaseElement getHomeTimelineTab() {
+        return driver.createBaseElement(By.xpath("//a[starts-with(@class, 'tab-0')]"));
+    }
+
     public TextElement getFilterTextElement() {
         return driver.createTextElement(By.xpath("//input[@class='filter-keyword']"));
     }
 
-    public BaseElement getTweetStyleOneElement() {
+    public BaseElement getHomeTimelineTweetStyleOneElement() {
         return driver.createBaseElement(By.xpath("//div[@class='homeTimeline']"))
                 .createBaseElement(By.xpath("//div[@id='timeline-inner']"))
-                .createBaseElement(By.xpath("//div[@class='tweet-style-one']"));
+                .createBaseElement(By.xpath("//div[starts-with(@class, 'tweet-style-one')]"));
+    }
+
+    public BaseElement getUserTimelineTweetStyleOneElement() {
+        return driver.createBaseElement(By.xpath("//div[@class='userTimeline']"))
+                .createBaseElement(By.xpath("//div[@id='timeline-inner']"))
+                .createBaseElement(By.xpath("//div[starts-with(@class, 'tweet-style-one')]"));
     }
 
     public BaseElement getErrorElement() {

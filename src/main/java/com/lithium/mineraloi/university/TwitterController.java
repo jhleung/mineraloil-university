@@ -12,13 +12,23 @@ public class TwitterController {
         view.getFilterHomeTimelineButton().click();
     }
 
+    public void clickHomeTimelineTab() {
+        view.getHomeTimelineTab().click();
+    }
+
+    public void clickUserTimelineTab() {
+        view.getUserTimelineTab().click();
+    }
+
     public String getInputText() {
         return view.getFilterTextElement().getAttribute("value");
     }
 
-    public Boolean tweetIsDisplayed() {
-        return view.getTweetStyleOneElement().isDisplayed();
+    public Boolean homeTimelineTweetIsDisplayed() {
+        return view.getHomeTimelineTweetStyleOneElement().isDisplayed();
     }
+
+    public Boolean userTimelineTweetIsDisplayed() { return view.getUserTimelineTweetStyleOneElement().isDisplayed(); }
 
     public Boolean errorIsDisplayed() {
         return view.getErrorElement().isDisplayed();
